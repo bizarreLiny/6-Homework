@@ -1,0 +1,11 @@
+# Conda 环境配置文件
+# 使用 conda env export > environment.yml 命令导出，替换下方占位内容
+
+name: <你的环境名称>
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=<版本号>
+  - numpy=<版本号>
+  # TODO: 替换为 conda env export 生成的完整依赖列表
