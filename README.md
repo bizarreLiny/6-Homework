@@ -70,6 +70,3 @@ RoboCon-Training-Sample/
 4. **笔记格式**：所有笔记须使用 Markdown 格式编写，逻辑清晰
 5. **示例仓库**：https://github.com/BeiNuoKeLi/RoboCon-Training-Sample（本仓库仅为格式参考，具体交付物以各作业要求为准）
 
----
-
-*本仓库仅作格式参考，具体交付物以各作业描述为准，请基于此模板完成你的作业并提交。*
