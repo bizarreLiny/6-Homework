@@ -21,18 +21,27 @@ import cv2
 def parse_args():
     """解析命令行参数"""
     parser = argparse.ArgumentParser(description="图像批处理脚本")
-    # TODO: 添加 --dir 参数
-    pass
+    parser.add_argument('--dir', type=str, help='Directory containing images')
 
 
 def main():
     args = parse_args()
-    # TODO: 遍历目标文件夹
+    files = os.listdir(args.dir)
+    img_count = 0
     # TODO: 筛选 .jpg / .png 文件（不区分大小写）
-    # TODO: 用 cv2.imread 读取图片
-    # TODO: 用字典存储并打印 名称、分辨率、通道数
-    pass
-
+    print("="*42)
+    for file in files:
+        if file.lower().endswith(('.jpg', '.png')):
+            img_count += 1
+            img_path = os.path.join(args.dir, file)
+            img = cv2.imread(img_path)
+            if img is not None:
+                height, width = img.shape[:2]
+                channels = img.shape[2] if len(img.shape) == 3 else 1
+                print(f"文件名: {file}\n 分辨率: {width} x {height}\n 通道数: {channels}")
+                print("-"*42)
+    print("="*42)
+    print(f"总计: {img_count} 张图片")
 
 if __name__ == "__main__":
     main()
